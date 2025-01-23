@@ -120,4 +120,65 @@ According with the Correlation Matrix:
 
 ![Correlation Matrix](./datasets/img/CorrelationMatrix.png)
 
-We can see a strong correlation with the `DefectStatus` 
+We can see that target variable `DefectStatus` has a strong correlation with the variables `MaintenanceHours`, `DefectRate` and `ProductionVolume`. If we see the charts of these Variables we notice the following behavior: 
+
+![MaintenanceHours chart](./datasets/img/MaintenanceHours-DefectStatus.png)
+
+![DefectRate chart](./datasets/img/DefectRate-DefectStatus.png)
+
+![ProductionVolume chart](./datasets/img/ProductionVolume-DefectStatus.png)
+
+* The probability of produce more defects in production increase if the production volume is above 800 pieces per day.
+* If the maintenance hours per week are above 10 hours, the probability of produce defects in production increase.
+
+# Machine Learning Models
+
+For this project we trained 3 models:
+
+* Logistic Regression
+* Random Forest
+* Gradient Boosting
+
+And according with the metrics: 
+
+* Accuracy
+* Precision
+* Recall
+* F1 
+* ROC_AUC
+
+The results for the models are the following: 
+
+## Logistic Regression
+
+| Accuracy | Precision | Recall |  F1  | ROC_AUC |
+|----------|-----------|--------|------|---------|
+|   0.75   |    0.93   |  0.75  | 0.83 |   0.84  |
+
+## Random Forest
+
+| Accuracy | Precision | Recall |  F1  | ROC_AUC |
+|----------|-----------|--------|------|---------|
+|   0.95   |    0.95   |  0.99  | 0.97 |   0.88  |
+
+## Gradient Boosting
+
+| Accuracy | Precision | Recall |  F1  | ROC_AUC |
+|----------|-----------|--------|------|---------|
+|   0.94   |    0.95   |  0.98  | 0.96 |   0.91  |
+
+As we can see the models more trustable are "Random Forest" and "Gradient Boosting", where the latter is slightly better, so we will choose this option. 
+
+# Conclusions
+
+According with the results of this project we can conclude the following:
+
+* The probability of produce more defects in production increase if the production volume is above 800 pieces per day.
+* If the maintenance hours per weeks are above 10 hours, the probability of produce defects in production increase.
+* The most optimized model for the prediction of Manufacturing Defects is "Gradient Boosting".
+
+# Data License
+
+The data used in this project was provided for Rabie El Kharoua.
+
+Rabie El Kharoua. (2024). 🏭 Predicting Manufacturing Defects Dataset [Data set]. Kaggle. https://doi.org/10.34740/KAGGLE/DSV/8715500
